@@ -1,10 +1,17 @@
 var SERVER = (function(){ 
-    var conn;    
+    var conn;
+    
     function listen(){
         app.setTimeout(function(){
             var incoming = conn.poll();
             if (incoming){
-                eval(incoming.read());
+                try {
+                    eval(incoming.read());
+                    incoming.writeln("Success!")
+                }
+                catch(err){
+                    incoming.writeln (err);
+                }
                 incoming.close();
                 delete incoming
             }
