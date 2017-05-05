@@ -1,4 +1,4 @@
-# ae.server
+'# ae.server
 A little demo showing how to setup After Effects as a server.
 
 ## Usage
@@ -12,7 +12,7 @@ Here is an example of communicating with After Effects through Python
 import socket 
 s = socket.socket() 
 s.connect(("localhost", 9000)) 
-s.send("alert('I bet this can get annoying)") 
+s.send("alert('Hello from Python!')") 
 s.shutdown(2) 
 s.close()
 ```
